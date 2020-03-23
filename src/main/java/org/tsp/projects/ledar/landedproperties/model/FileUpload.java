@@ -17,7 +17,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
-@Table(name = "file_upload")
+@Table(name = "file_uploads")
 @AttributeOverride(name = "id", column = @Column(name = "file_upload_id", nullable = false, columnDefinition = "BIGINT"))
 public class FileUpload extends LedarAbstractBase implements Serializable {
 

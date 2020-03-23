@@ -31,7 +31,7 @@ public class ComplaintType extends LedarAbstractBase implements Serializable {
     
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 25)
+    @Size(max = 45)
     @Column(name = "type_name")
     private String typeName;
     @Size(max = 35)

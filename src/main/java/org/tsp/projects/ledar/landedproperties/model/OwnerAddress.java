@@ -20,14 +20,14 @@ import java.util.List;
 @AttributeOverride(name = "id", column = @Column(name = "owner_address_id", nullable = false, columnDefinition = "BIGINT"))
 public class OwnerAddress extends LedarAbstractBase implements Serializable {
 
+    @Size(max = 8)
+    @Column(name = "house_no")
+    private String houseNo;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "address")
-    private String address;
-    @Size(max = 70)
-    @Column(name = "address2")
-    private String address2;
+    @Size(max = 100)
+    @Column(name = "street_name")
+    private String streetName;
     @Size(max = 100)
     @Column(name = "directions")
     private String directions;

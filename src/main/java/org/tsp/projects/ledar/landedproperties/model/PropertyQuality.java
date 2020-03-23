@@ -2,13 +2,7 @@ package org.tsp.projects.ledar.landedproperties.model;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.AttributeOverride;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -25,7 +19,10 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
-@Table(name = "ref_property_qualities")
+@Table(name = "property_qualities",
+        uniqueConstraints=
+        @UniqueConstraint(columnNames={"quality_name", "percentage_value"})
+)
 @AttributeOverride(name = "id", column = @Column(name = "property_quality_id", nullable = false, columnDefinition = "BIGINT"))
 class PropertyQuality extends LedarAbstractBase implements Serializable {
     
