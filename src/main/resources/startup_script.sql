@@ -2889,3 +2889,7 @@ INSERT INTO public.ref_street_types(street_type_id, created, creator_username, m
 INSERT INTO public.ref_street_types(street_type_id, created, creator_username, modified, description, street_type_name) VALUES (7, NOW(), 'brainiac5', NOW(), NULL, 'BOULEVARD');
 INSERT INTO public.ref_street_types(street_type_id, created, creator_username, modified, description, street_type_name) VALUES (8, NOW(), 'brainiac5', NOW(), NULL, 'ESTATE');
 INSERT INTO public.ref_street_types(street_type_id, created, creator_username, modified, description, street_type_name) VALUES (9, NOW(), 'brainiac5', NOW(), NULL, 'DRIVE');
+
+INSERT INTO public.ref_title_document_types(
+	title_document_id, created, creator_username, modified, description, title_name)
+	VALUES (1, '2016-04-16 09:51:31', 'brainiac5', '2016-04-16 09:51:31', 'Certificate Of Ownership', 'C Of O');
