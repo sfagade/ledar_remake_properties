@@ -35,7 +35,7 @@ public class FileUpload extends LedarAbstractBase implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "file_type")
     private String fileType;
-    @Column(name = "is_deleted", columnDefinition = "tinyint(1) default 0")
+    @Column(name = "is_deleted", columnDefinition = "boolean default false")
     private Boolean isDeleted;
     @Column(name = "delete_date")
     @Temporal(javax.persistence.TemporalType.DATE)

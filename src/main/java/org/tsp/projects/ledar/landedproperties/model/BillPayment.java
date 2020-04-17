@@ -93,9 +93,9 @@ public class BillPayment extends LedarAbstractBase implements Serializable {
     private String pptAddress;
     @Column(name = "lga_location")
     private String lgaLocation;
-    @Column(name = "is_processed", columnDefinition = "tinyint(1) default 0")
+    @Column(name = "is_processed", columnDefinition = "boolean default false")
     private Boolean isProcessed;
-    @Column(name = "is_duplicate", columnDefinition = "tinyint(1) default 0")
+    @Column(name = "is_duplicate", columnDefinition = "boolean default false")
     private Boolean isDuplicate;
     @Column(name = "payment_status")
     private String paymentStatus;

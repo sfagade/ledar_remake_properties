@@ -170,9 +170,9 @@ public class PrintedBill extends LedarAbstractBase implements Serializable {
     private BigDecimal nextYrBroughtForward;
     @Column(name = "delivery_comments")
     private String deliveryComments;
-    @Column(name = "has_match_payment", columnDefinition = "tinyint(1) default 0")
+    @Column(name = "has_match_payment", columnDefinition = "boolean default false")
     private Boolean hasMatchPayment;
-    @Column(name = "is_deleted", columnDefinition = "tinyint(1) default 0")
+    @Column(name = "is_deleted", columnDefinition = "boolean default false")
     private Boolean isDeleted;
     @Column(name = "print_count")
     private int printCount;

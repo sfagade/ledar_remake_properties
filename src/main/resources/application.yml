@@ -1,6 +1,6 @@
 spring:
   application:
-    name: landedProperties
+    name: properties
 
 eureka:
   client:
