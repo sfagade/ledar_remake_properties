@@ -40,7 +40,7 @@ public class LocalCouncilDevArea extends LedarAbstractBase implements Serializab
     @Column(name = "remarks")
     private String remarks;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "localCouncilDevAreaId")
-    private List<LcdaWards> lcdaWardsList;
+    private List<LcdaWard> lcdaWardList;
     @JoinColumn(name = "senatorial_district_id", referencedColumnName = "senatorial_district_id")
     @ManyToOne(optional = false)
     private SenatorialDistrict senatorialDistrictId;

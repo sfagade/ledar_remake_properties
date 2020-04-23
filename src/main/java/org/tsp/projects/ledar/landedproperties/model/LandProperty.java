@@ -11,7 +11,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -155,7 +154,7 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "landPropertyId")
     private List<PropertyClassificationDetail> propertyClassificationDetailsList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "landPropertyId")
-    private List<PropertyService> propertyServiceTypesList;
+    private List<PropertyService> propertyServiceTypesList; //TODO I need to convert this to an Enum
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "landPropertyId")
     private List<PropertyComplaint> propertyComplaintsList;
     @JoinColumn(name = "property_quality_id", referencedColumnName = "property_quality_id")

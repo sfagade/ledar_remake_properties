@@ -42,7 +42,7 @@ public class WardTown extends LedarAbstractBase implements Serializable {
     
     @JoinColumn(name = "lcda_ward_id", referencedColumnName = "lcda_ward_id")
     @ManyToOne(optional = false)
-    private LcdaWards lcdaWardId;
+    private LcdaWard lcdaWardId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "wardTownId")
     private List<WardStreet> wardStreetsList;
 }

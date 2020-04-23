@@ -35,9 +35,4 @@ public class LandPropertyResource {
         return new ResponseEntity<List<LandProperty>>(list, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/fetchHello", method = RequestMethod.GET)
-    public String fetchHelloWorld() {
-
-        return "Hello People";
-    }
 }

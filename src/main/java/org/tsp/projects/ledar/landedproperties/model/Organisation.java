@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.List;
@@ -21,8 +22,10 @@ public class Organisation extends LedarAbstractBase implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Size(min = 1, max = 200)
+    @Size(max = 200)
     @Column(name = "organisation_name")
+    @Basic(optional = false)
+    @NotNull
     private String organisationName;
 
     @Size(min = 1, max = 20)
@@ -42,6 +45,10 @@ public class Organisation extends LedarAbstractBase implements Serializable {
     @Size(max = 45)
     @Column(name = "web_url")
     private String webUrl;
+    @Column(name = "organisation_type", columnDefinition = "varchar(25) default 'LUC CONSULTANT'")
+    @Basic(optional = false)
+    @NotNull
+    private String organisationType;
 
     @JoinColumn(name = "owner_address_id", referencedColumnName = "owner_address_id")
     @ManyToOne
@@ -49,10 +56,6 @@ public class Organisation extends LedarAbstractBase implements Serializable {
     @JoinColumn(name = "organization_logo_id", referencedColumnName = "file_upload_id")
     @ManyToOne
     private FileUpload organizationLogoId;
-    @JoinColumn(name = "organisation_type_id", referencedColumnName = "organisation_type_id")
-    @ManyToOne(optional = false)
-    private OrganisationType organisationTypeId;
-
     @JoinColumn(name = "senatorial_district_id", referencedColumnName = "senatorial_district_id")
     @ManyToOne
     private SenatorialDistrict senatorialDistrictId;

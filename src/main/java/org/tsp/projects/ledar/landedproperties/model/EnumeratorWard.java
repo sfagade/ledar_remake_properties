@@ -31,6 +31,6 @@ public class EnumeratorWard extends LedarAbstractBase implements Serializable {
     private String remarks;
     @JoinColumn(name = "lcda_ward_id", referencedColumnName = "lcda_ward_id")
     @ManyToOne(optional = false)
-    private LcdaWards lcdaWardId;
+    private LcdaWard lcdaWardId;
     
 }

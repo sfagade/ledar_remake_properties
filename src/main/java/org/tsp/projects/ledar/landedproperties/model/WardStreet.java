@@ -1,7 +1,6 @@
 package org.tsp.projects.ledar.landedproperties.model;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Basic;
@@ -99,7 +98,7 @@ class WardStreet extends LedarAbstractBase implements Serializable  {
     private StreetTypes streetTypeId;
     @JoinColumn(name = "lcda_ward_id", referencedColumnName = "lcda_ward_id")
     @ManyToOne(optional = false)
-    private LcdaWards lcdaWardId;
+    private LcdaWard lcdaWardId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "wardStreetId")
     private List<LandProperty> landPropertyList;
     @JoinColumn(name = "ward_town_id", referencedColumnName = "ward_town_id")

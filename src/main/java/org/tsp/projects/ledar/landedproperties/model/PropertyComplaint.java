@@ -88,7 +88,7 @@ public class PropertyComplaint extends LedarAbstractBase implements Serializable
     private List<ComplaintDetail> complaintDetailsList;
     @JoinColumn(name = "lcda_ward_id", referencedColumnName = "lcda_ward_id")
     @ManyToOne(optional = false)
-    private LcdaWards lcdaWardId;
+    private LcdaWard lcdaWardId;
     @JoinColumn(name = "local_council_dev_area_id", referencedColumnName = "local_council_dev_area_id")
     @ManyToOne(optional = false)
     private LocalCouncilDevArea localCouncilDevAreaId;
