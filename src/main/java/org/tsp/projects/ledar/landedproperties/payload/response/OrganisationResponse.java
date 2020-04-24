@@ -7,6 +7,8 @@ import lombok.ToString;
 
 import org.tsp.projects.ledar.landedproperties.payload.PayloadAbstractBase;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @ToString
 @Data
@@ -24,4 +26,16 @@ public class OrganisationResponse extends PayloadAbstractBase {
     private OwnerAddressResponse addressId;
     private FileUploadResponse organizationLogoId;
     private SenatorialDistrictResponse senatorialDistrict;
+
+    public OrganisationResponse(Long organisationId, String organisationName, String organisationCode,
+                                String organisationType, SenatorialDistrictResponse senatorialDistrict,
+                                LocalDateTime created, LocalDateTime modified) {
+        this.organisationName = organisationName;
+        this.organisationCode = organisationCode;
+        this.organisationType = organisationType;
+        this.senatorialDistrict = senatorialDistrict;
+        this.baseId = organisationId;
+        this.created = created;
+        this.modified = modified;
+    }
 }

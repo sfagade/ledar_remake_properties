@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.tsp.projects.ledar.landedproperties.payload.PayloadAbstractBase;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @ToString
 @Data
@@ -14,4 +16,13 @@ public class SettlementTypeResponse extends PayloadAbstractBase {
 
     private String settlementTypeName;
     private String description;
+
+    public SettlementTypeResponse(Long settlementTypeId, String settlementTypeName, String description,
+                                  LocalDateTime created, LocalDateTime modified) {
+        this.settlementTypeName = settlementTypeName;
+        this.description = description;
+        this.baseId = settlementTypeId;
+        this.created = created;
+        this.modified = modified;
+    }
 }

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.tsp.projects.ledar.landedproperties.payload.PayloadAbstractBase;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -42,4 +43,18 @@ public class WardStreetResponse extends PayloadAbstractBase {
     private LcdaWardResponse lcdaWardId;
     private List<LandedPropertyResponse> landPropertyList;
     private WardTownResponse wardTownId;
+
+    public WardStreetResponse(Long streetId, String streetName, String offStreetOne, String estateName,
+                              SettlementTypeResponse settlementType, StreetTypesResponse streetType,
+                              LcdaWardResponse lcdaWardId, LocalDateTime created, LocalDateTime modified) {
+        this.streetName = streetName;
+        this.offStreetOne = offStreetOne;
+        this.estateName = estateName;
+        this.settlementType = settlementType;
+        this.streetType = streetType;
+        this.lcdaWardId = lcdaWardId;
+        this.baseId = streetId;
+        this.created = created;
+        this.modified = modified;
+    }
 }

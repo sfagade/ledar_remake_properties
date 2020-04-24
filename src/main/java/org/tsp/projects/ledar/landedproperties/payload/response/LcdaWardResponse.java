@@ -7,6 +7,7 @@ import lombok.ToString;
 import org.tsp.projects.ledar.landedproperties.payload.PayloadAbstractBase;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -25,4 +26,15 @@ public class LcdaWardResponse extends PayloadAbstractBase {
     private OrganisationResponse contractor;
     private List<WardTownResponse> wardTownsList;
     private List<EnumeratorWardResponse> enumeratorWardsListResponse;
+
+    public LcdaWardResponse(Long wardId, String wardCode, String wardName, LocalCouncilDevAreaResponse localCouncilDevArea,
+                            OrganisationResponse contractor, LocalDateTime created, LocalDateTime modified) {
+        this.wardCode = wardCode;
+        this.wardName = wardName;
+        this.localCouncilDevArea = localCouncilDevArea;
+        this.contractor = contractor;
+        this.baseId = wardId;
+        this.created = created;
+        this.modified = modified;
+    }
 }

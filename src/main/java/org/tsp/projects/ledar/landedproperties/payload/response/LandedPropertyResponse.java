@@ -1,5 +1,6 @@
 package org.tsp.projects.ledar.landedproperties.payload.response;
 
+import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -59,4 +60,28 @@ public class LandedPropertyResponse extends PayloadAbstractBase {
     private Boolean documentViewed;
     private NoTitleDocumentTypeResponse noTitleDocumentId;
     private TitleDocumentTypeResponse titleDocumentId;
+
+    public LandedPropertyResponse(Long landPropertyId,Integer noOfBuildings, String propertyValuationStatus, 
+            String propertyId, String propertyNumber, Date dateCaptured, Date verifiedDate, String landSize, 
+            String ownershipType, Double buildingArea, String verifiedByUsername, String updatedByUsername, 
+            OrganisationResponse contractorId, WardStreetResponse wardStreet, LocalDateTime created, 
+            LocalDateTime modified) {
+        this.noOfBuildings = noOfBuildings;
+        this.propertyValuationStatus = propertyValuationStatus;
+        this.propertyId = propertyId;
+        this.propertyNumber = propertyNumber;
+        this.dateCaptured = dateCaptured;
+        this.verifiedDate = verifiedDate;
+        this.landSize = landSize;
+        this.ownershipType = ownershipType;
+        this.buildingArea = buildingArea;
+        this.verifiedByUsername = verifiedByUsername;
+        this.updatedByUsername = updatedByUsername;
+        this.contractorId = contractorId;
+        this.wardStreet = wardStreet;
+        this.baseId = landPropertyId;
+        this.created = created;
+        this.modified = modified;
+    }
+    
 }

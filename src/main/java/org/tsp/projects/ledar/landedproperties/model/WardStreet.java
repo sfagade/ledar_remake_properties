@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name = "ref_ward_streets")
 @AttributeOverride(name = "id", column = @Column(name = "ward_street_id", nullable = false, columnDefinition = "BIGINT"))
-class WardStreet extends LedarAbstractBase implements Serializable  {
+public class WardStreet extends LedarAbstractBase implements Serializable  {
     
     @Basic(optional = false)
     @NotNull
