@@ -15,14 +15,14 @@ import java.util.List;
 @Service
 public class LandPropertyService {
 
-    private LandPropertyRepository repository;
+    private final LandPropertyRepository repository;
 
     @Autowired
     public LandPropertyService(LandPropertyRepository landPropertyRepository) {
         repository = landPropertyRepository;
     }
 
-    public List<LandProperty> getAllEmployees(Integer pageNo, Integer pageSize, String sortBy) {
+    public List<LandProperty> fetchPageSortProperties(Integer pageNo, Integer pageSize, String sortBy) {
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
 
         Page<LandProperty> pagedResult = repository.findAll(paging);

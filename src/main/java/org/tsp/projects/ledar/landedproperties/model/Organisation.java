@@ -45,10 +45,9 @@ public class Organisation extends LedarAbstractBase implements Serializable {
     @Size(max = 45)
     @Column(name = "web_url")
     private String webUrl;
-    @Column(name = "organisation_type", columnDefinition = "varchar(25) default 'LUC CONSULTANT'")
-    @Basic(optional = false)
     @NotNull
-    private String organisationType;
+    @Column(name = "organisation_sector")
+    private String organisationSector;
 
     @JoinColumn(name = "owner_address_id", referencedColumnName = "owner_address_id")
     @ManyToOne

@@ -29,12 +29,12 @@ public class LandPropertyResource {
         this.service = landPropertyService;
     }
 
-    @RequestMapping(value = "/fetchAllOccupations/{pageNo}/{pageSize}/{sortBy}", method = RequestMethod.GET)
-    public ResponseEntity<List<LandedPropertyResponse>> getAllEmployees(
+    @RequestMapping(value = "/fetchPagedPropeties/{pageNo}/{pageSize}/{sortBy}", method = RequestMethod.GET)
+    public ResponseEntity<List<LandedPropertyResponse>> fetchPagedPropeties(
             @PathVariable("pageNo") Integer pageNo,
             @PathVariable("pageSize") Integer pageSize,
             @PathVariable("sortBy") String sortBy) {
-        List<LandProperty> list = service.getAllEmployees(pageNo, pageSize, sortBy);
+        List<LandProperty> list = service.fetchPageSortProperties(pageNo, pageSize, sortBy);
         List<LandedPropertyResponse> landedPropertyResponseList = new ArrayList<>();
 
         if (list != null && list.size() > 0) {
