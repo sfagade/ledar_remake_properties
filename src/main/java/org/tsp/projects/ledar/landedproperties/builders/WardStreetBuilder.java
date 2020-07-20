@@ -5,10 +5,10 @@ import org.tsp.projects.ledar.landedproperties.payload.response.WardStreetRespon
 
 public class WardStreetBuilder {
 
-    public static WardStreetResponse buildWardStreetData(WardStreet wardStreet, boolean isDetail) {
+    public static WardStreetResponse buildWardStreetData(WardStreet wardStreet, Boolean isDetail) {
         WardStreetResponse wardStreetResponse = null;
         if (wardStreet != null) {
-            if (!isDetail) {
+            if (isDetail == null || !isDetail) {
                 wardStreetResponse = new WardStreetResponse(wardStreet.getId(), wardStreet.getStreetName(),
                         wardStreet.getOffStreetOne(), wardStreet.getEstateName(),
                         SettlementTypeBuilder.buildSettlementTypeData(wardStreet.getSettlementTypeId()),
@@ -17,7 +17,7 @@ public class WardStreetBuilder {
                         wardStreet.getCreated(), wardStreet.getModified());
             } else {
                 wardStreetResponse = buildWardStreetData(wardStreet, false);
-                //NOTE I need to add the fields to make this a complete details implementation
+                //TODO I need to add the fields to make this a complete details implementation
             }
         }
         return wardStreetResponse;

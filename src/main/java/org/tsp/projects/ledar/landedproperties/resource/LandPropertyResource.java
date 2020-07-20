@@ -29,8 +29,8 @@ public class LandPropertyResource {
         this.service = landPropertyService;
     }
 
-    @RequestMapping(value = "/fetchPagedPropeties/{pageNo}/{pageSize}/{sortBy}", method = RequestMethod.GET)
-    public ResponseEntity<List<LandedPropertyResponse>> fetchPagedPropeties(
+    @RequestMapping(value = "/fetchPagedProperties/{pageNo}/{pageSize}/{sortBy}", method = RequestMethod.GET)
+    public ResponseEntity<List<LandedPropertyResponse>> fetchPagedProperties(
             @PathVariable("pageNo") Integer pageNo,
             @PathVariable("pageSize") Integer pageSize,
             @PathVariable("sortBy") String sortBy) {
