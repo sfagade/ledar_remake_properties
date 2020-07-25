@@ -5,11 +5,11 @@ import org.tsp.projects.ledar.landedproperties.payload.response.LandedPropertyRe
 
 public class LandedPropertyBuilder {
 
-    public static LandedPropertyResponse buildLandPropertyData(LandProperty landProperty, boolean isDetail) {
+    public static LandedPropertyResponse buildLandPropertyData(LandProperty landProperty, Boolean isDetail) {
 
         LandedPropertyResponse landedPropertyResponse = null;
         if (landProperty != null) {
-            if (!isDetail) {
+            if (isDetail == null || !isDetail) {
                 landedPropertyResponse = new LandedPropertyResponse(landProperty.getId(), landProperty.getNoOfBuildings(),
                         landProperty.getPropertyValuationStatus(), landProperty.getPropertyId(),
                         landProperty.getPropertyNumber(), landProperty.getDateCaptured(), landProperty.getVerifiedDate(),
@@ -20,7 +20,7 @@ public class LandedPropertyBuilder {
                         landProperty.getCreated(), landProperty.getModified());
             } else {
                 landedPropertyResponse = buildLandPropertyData(landProperty, false);
-                //NOTICE I should add the other fields that are not part of the constructor used to create the non-detail object
+                //TODO I should add the other fields that are not part of the constructor used to create the non-detail object
             }
         }
 

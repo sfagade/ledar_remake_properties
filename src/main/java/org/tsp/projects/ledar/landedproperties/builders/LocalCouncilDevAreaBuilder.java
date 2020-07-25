@@ -5,10 +5,10 @@ import org.tsp.projects.ledar.landedproperties.payload.response.LocalCouncilDevA
 
 public class LocalCouncilDevAreaBuilder {
 
-    public static LocalCouncilDevAreaResponse buildLocalCouncilDevAreaData(LocalCouncilDevArea localCouncilDevArea, boolean isDetail) {
+    public static LocalCouncilDevAreaResponse buildLocalCouncilDevAreaData(LocalCouncilDevArea localCouncilDevArea, Boolean isDetail) {
         LocalCouncilDevAreaResponse localCouncilDevAreaResponse = null;
         if (localCouncilDevArea != null) {
-            if (!isDetail) {
+            if (isDetail == null || !isDetail) {
                 localCouncilDevAreaResponse = new LocalCouncilDevAreaResponse(localCouncilDevArea.getId(),
                         localCouncilDevArea.getLcdaName(),
                         SenatorialDistrictBuilder.buildSenatorialDistrictData(localCouncilDevArea.getSenatorialDistrictId(), false),
@@ -17,7 +17,7 @@ public class LocalCouncilDevAreaBuilder {
                         localCouncilDevArea.getCreated(), localCouncilDevArea.getModified());
             } else {
                 localCouncilDevAreaResponse = buildLocalCouncilDevAreaData(localCouncilDevArea, false);
-                //NOTICE I need to add lcdaWardList to make this a detailed object
+                //TODO I need to add lcdaWardList to make this a detailed object
             }
         }
         return localCouncilDevAreaResponse;
