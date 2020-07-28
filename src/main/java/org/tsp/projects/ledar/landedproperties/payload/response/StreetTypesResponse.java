@@ -21,7 +21,7 @@ public class StreetTypesResponse extends PayloadAbstractBase {
                                LocalDateTime modified) {
         this.streetTypeName = streetTypeName;
         this.description = description;
-        this.baseId = streetTypeId;
+        this.id = streetTypeId;
         this.modified = modified;
         this.created = created;
     }

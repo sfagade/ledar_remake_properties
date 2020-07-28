@@ -31,7 +31,7 @@ public class LocalCouncilDevAreaResponse extends PayloadAbstractBase {
         this.longitude = longitude;
         this.latitude = latitude;
         this.contractorId = contractorId;
-        this.baseId = lcdaId;
+        this.id = lcdaId;
         this.created = created;
         this.modified = modified;
     }

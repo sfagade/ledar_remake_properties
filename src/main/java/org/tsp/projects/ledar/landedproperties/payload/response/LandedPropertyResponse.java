@@ -79,7 +79,7 @@ public class LandedPropertyResponse extends PayloadAbstractBase {
         this.updatedByUsername = updatedByUsername;
         this.contractorId = contractorId;
         this.wardStreet = wardStreet;
-        this.baseId = landPropertyId;
+        this.id = landPropertyId;
         this.created = created;
         this.modified = modified;
     }

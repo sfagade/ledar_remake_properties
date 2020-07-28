@@ -34,7 +34,7 @@ public class OrganisationResponse extends PayloadAbstractBase {
         this.organisationCode = organisationCode;
         this.organisationType = organisationType;
         this.senatorialDistrict = senatorialDistrict;
-        this.baseId = organisationId;
+        this.id = organisationId;
         this.created = created;
         this.modified = modified;
     }
