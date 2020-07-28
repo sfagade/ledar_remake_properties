@@ -7,6 +7,6 @@ import java.time.LocalDateTime;
 @Data
 public abstract class PayloadAbstractBase {
 
-    protected Long baseId, createdById;
+    protected Long id, createdById;
     protected LocalDateTime created, modified;
 }
