@@ -53,7 +53,7 @@ public class WardStreetResponse extends PayloadAbstractBase {
         this.settlementType = settlementType;
         this.streetType = streetType;
         this.lcdaWardId = lcdaWardId;
-        this.baseId = streetId;
+        this.id = streetId;
         this.created = created;
         this.modified = modified;
     }

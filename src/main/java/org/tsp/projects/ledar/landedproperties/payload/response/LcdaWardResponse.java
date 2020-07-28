@@ -33,7 +33,7 @@ public class LcdaWardResponse extends PayloadAbstractBase {
         this.wardName = wardName;
         this.localCouncilDevArea = localCouncilDevArea;
         this.contractor = contractor;
-        this.baseId = wardId;
+        this.id = wardId;
         this.created = created;
         this.modified = modified;
     }

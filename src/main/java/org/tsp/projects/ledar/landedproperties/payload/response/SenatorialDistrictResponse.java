@@ -27,7 +27,7 @@ public class SenatorialDistrictResponse extends PayloadAbstractBase {
         this.districtName = districtName;
         this.senatorialCode = senatorialCode;
         this.districtState = districtState;
-        this.baseId = districtId;
+        this.id = districtId;
         this.created = created;
         this.modified = modified;
     }

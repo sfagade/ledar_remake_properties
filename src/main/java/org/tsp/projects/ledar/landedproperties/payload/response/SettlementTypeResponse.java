@@ -21,7 +21,7 @@ public class SettlementTypeResponse extends PayloadAbstractBase {
                                   LocalDateTime created, LocalDateTime modified) {
         this.settlementTypeName = settlementTypeName;
         this.description = description;
-        this.baseId = settlementTypeId;
+        this.id = settlementTypeId;
         this.created = created;
         this.modified = modified;
     }
