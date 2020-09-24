@@ -70,7 +70,6 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     @Size(min = 1, max = 25)
     @Column(name = "land_size")
     private String landSize;
-
     @Size(max = 200, message = "Address too long")
     @Column(name = "irregular_address")
     private String irregularAddress;
@@ -89,46 +88,16 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     @Size(max = 35)
     @Column(name = "water_supply")
     private String waterSupply;
-     @Column(name = "settlement_type_name")
-    private String settlementTypeName;
-    @Column(name = "has_street_light")
-    private Boolean hasStreetLight;
-    @Column(name = "street_light_type")
-    private String streetLightType;
     @Column(name = "waste_disposal_system")
     private String wasteDisposalSystem;
-    @Column(name = "tarred_road")
-    private Boolean tarredRoad;
-    @Column(name = "untarred_road")
-    private Boolean untarredRoad;
-    @Column(name = "road_condition")
-    private String roadCondition;
-    @Column(name = "has_drainage_facility")
-    private Boolean hasDrainageFacility;
-    @Column(name = "is_drainage_covered")
-    private Boolean isDrainageCovered;
-    @Column(name = "has_walkways")
-    private Boolean hasWalkways;
-    @Column(name = "has_street_landscaping")
-    private Boolean hasStreetLandscaping;
-    @Column(name = "nearest_bus_stop")
-    private String nearestBusStop;
-    @Column(name = "nearest_rail_terminus")
-    private String nearestRailTerminus;
-    @Column(name = "nearest_water_terminus")
-    private String nearestWaterTerminus;
     @Column(name = "ownership_type")
     private String ownershipType;
     @Column(name = "phcn_id")
     private String phcnId;
     @Column(name = "lswc_id")
     private String lswcId;
-    @Column(name = "estate_name")
-    private String estateName;
     @Column(name = "building_area")
     private Double buildingArea;
-    @Column(name = "push_status")
-    private String pushStatus;
     @Column(name = "admin_comment")
     private String adminComment;
     @Column(name = "verified_by_username")
@@ -137,7 +106,6 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     @Column(name = "updated_by_username")
     @Size(max = 35)
     private String updatedByUsername;
-
     @JoinColumn(name = "owner_organisation_id", referencedColumnName = "organisation_id")
     @ManyToOne
     private Organisation ownerOrganisationId;
@@ -147,7 +115,6 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     @JoinColumn(name = "property_bio_data_id", referencedColumnName = "property_bio_data_id")
     @ManyToOne
     private PropertyBioData propertyBioDataId;
-
     @JoinColumn(name = "ward_street_id", referencedColumnName = "ward_street_id")
     @ManyToOne
     private WardStreet wardStreetId;

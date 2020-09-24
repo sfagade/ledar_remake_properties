@@ -30,7 +30,14 @@ import lombok.NoArgsConstructor;
 @Table(name = "ref_ward_streets")
 @AttributeOverride(name = "id", column = @Column(name = "ward_street_id", nullable = false, columnDefinition = "BIGINT"))
 public class WardStreet extends LedarAbstractBase implements Serializable  {
-    
+
+    /** fields to add:
+    settlementTypeName,
+    streetLightType,
+roadCondition,
+
+     */
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -59,10 +66,7 @@ public class WardStreet extends LedarAbstractBase implements Serializable  {
     private String wasteDisposalSystem;
     @Size(max = 15)
     @Column(name = "tarred_road")
-    private String tarredRoad;
-    @Size(max = 25)
-    @Column(name = "untarred_road")
-    private String untarredRoad;
+    private String tarredRoad; //TODO I need to convert this to boolean
     @Column(name = "has_drainage_facility")
     private Boolean hasDrainageFacility;
     @Column(name = "drainage_covered")

@@ -68,8 +68,6 @@ public class PropertyBioData extends LedarAbstractBase implements Serializable {
     @Size(max = 25)
     @Column(name = "employment_status")
     private String employmentStatus;
-    @Column(name = "web_address")
-    private String webAddress;
     @Column(name = "occupation")
     private String occupation;
     @Column(name = "date_of_birth")

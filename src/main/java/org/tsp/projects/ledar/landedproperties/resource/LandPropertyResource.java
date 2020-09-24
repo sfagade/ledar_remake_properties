@@ -22,11 +22,11 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/landProperty")
 public class LandPropertyResource {
 
-    private final LandPropertyService service;
+    private final LandPropertyService landPropertyService;
 
     @Autowired
     public LandPropertyResource(LandPropertyService landPropertyService) {
-        this.service = landPropertyService;
+        this.landPropertyService = landPropertyService;
     }
 
     @RequestMapping(value = "/fetchPagedProperties/{pageNo}/{pageSize}/{sortBy}", method = RequestMethod.GET)
@@ -34,14 +34,14 @@ public class LandPropertyResource {
             @PathVariable("pageNo") Integer pageNo,
             @PathVariable("pageSize") Integer pageSize,
             @PathVariable("sortBy") String sortBy) {
-        List<LandProperty> list = service.fetchPageSortProperties(pageNo, pageSize, sortBy);
+        List<LandProperty> list = landPropertyService.fetchPageSortProperties(pageNo, pageSize, sortBy);
         List<LandedPropertyResponse> landedPropertyResponseList = new ArrayList<>();
 
         if (list != null && list.size() > 0) {
             landedPropertyResponseList = list.stream().map(landProperty -> LandedPropertyBuilder.buildLandPropertyData(landProperty, false)).collect(Collectors.toList());
         }
 
-        return new ResponseEntity<List<LandedPropertyResponse>>(landedPropertyResponseList, new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<>(landedPropertyResponseList, new HttpHeaders(), HttpStatus.OK);
     }
 
 }
