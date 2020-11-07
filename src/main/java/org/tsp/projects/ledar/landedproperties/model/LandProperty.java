@@ -43,8 +43,6 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     private String propertyId;
     @Column(name = "property_number")
     private String propertyNumber;
-    @Column(name = "is_irregular_address")
-    private Boolean isIrregularAddress;
     @Column(name = "is_verified")
     private Boolean isVerified;
     @Size(max = 25)
@@ -70,9 +68,6 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     @Size(min = 1, max = 25)
     @Column(name = "land_size")
     private String landSize;
-    @Size(max = 200, message = "Address too long")
-    @Column(name = "irregular_address")
-    private String irregularAddress;
     @Size(max = 25)
     @Column(name = "electricity_type")
     private String electricityType;
@@ -81,10 +76,6 @@ public class LandProperty extends LedarAbstractBase implements Serializable {
     @Size(max = 1000)
     @Column(name = "description")
     private String description;
-    @Column(name = "district_name")
-    private String districtName;
-    @Column(name = "lga_name")
-    private String lgaName;
     @Size(max = 35)
     @Column(name = "water_supply")
     private String waterSupply;
